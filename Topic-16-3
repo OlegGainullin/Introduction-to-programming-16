@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main ()
+{
+    char *locale = setlocale(LC_ALL, "");
+    int n = 0;
+    int a = 0;
+    int b = 0;
+    int answer = 0;
+    printf("Введите N: ");
+    scanf("%d", &n);
+    int m[n];
+    printf("Введите A: ");
+    scanf("%d", &a);
+    printf("Введите B: ");
+    scanf("%d", &b);
+    int e = a + b;
+    m[0] = a;
+    m[1] = b;
+    for (int i = 2; i<n; i++)
+    {
+        m[i] = e;
+        e += e;
+    }
+    for (int i = 0; i<n; i++)
+    {
+        printf("%d ", m[i]);
+    }
+    return 0;
+}
