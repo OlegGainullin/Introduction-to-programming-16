@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main ()
+{
+    char *locale = setlocale(LC_ALL, "");
+    int n = 0;
+    int answer = 0;
+    printf("Введите N: ");
+    scanf("%d", &n);
+    int a[n]; //будем считать, что нумерация с 0
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    for (int i = 1; i < n; i+=2)
+    {
+        printf("%d ", a[i]);
+    }
+    if ((n-1) % 2 == 0)
+    {
+        for (int i = n-1; i > -1; i-=2)
+        {
+            printf("%d ", a[i]);
+        }
+    }
+    else
+    {
+        for (int i = n-2; i > -1; i-=2)
+        {
+            printf("%d ", a[i]);
+        }
+    }
+    return 0;
+}
